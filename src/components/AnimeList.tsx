@@ -38,6 +38,9 @@ export default async function AnimeList({ data }: { data: AnimesList }) {
           slug={anime.slug}
         />
       ))}
+      <div className="columns-1 bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-all ease-in-out duration-200 flex items-center justify-center xl:hidden">
+        <b>Show all</b>
+      </div>
     </section>
   );
 }
