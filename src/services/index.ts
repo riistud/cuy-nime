@@ -7,3 +7,11 @@ export async function getAnimeOngoing() {
   });
   return res.json();
 }
+
+export async function getAnimeCompleted() {
+  const res = await fetch(`${base_url}/completed`, {
+    cache: "force-cache",
+    next: { revalidate: 60 * 60 },
+  });
+  return res.json();
+}
