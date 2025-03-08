@@ -19,7 +19,7 @@ export default function AnimeCard({ image, title, status, type, slug }: Props) {
         className="h-64 group overflow-hidden relative"
       >
         <Link href={"/anime/" + slug}>
-          <span className=" absolute p-1 rounded-lg bg-sky-600 text-white top-3 right-3 text-xs">
+          <span className=" absolute p-1 rounded-lg bg-red-600 text-white top-3 right-3 text-xs">
             {type}
           </span>
           <div className="absolute top-0 left-0 bottom-0 flex items-center justify-center w-full h-full bg-black opacity-0 group-hover:opacity-70 transition-all ease-in-out duration-200">
@@ -40,7 +40,15 @@ export default function AnimeCard({ image, title, status, type, slug }: Props) {
       </div>
       <div className="p-2">
         <h2 className="line-clamp-1 font-semibold">{title}</h2>
-        <p>{status}</p>
+        <p
+          className={`${
+            status.toLocaleLowerCase() == "ongoing"
+              ? "text-sky-500"
+              : "text-green-500"
+          }`}
+        >
+          {status}
+        </p>
       </div>
     </div>
   );
