@@ -6,7 +6,7 @@ export default async function Home() {
   const animeOngoings = await getAnimeOngoing();
   const animeCompleteds = await getAnimeCompleted();
   return (
-    <section className="w-full container mx-auto flex flex-col gap-3 px-5 font-sans pt-20 md:pt-16 ">
+    <section className="w-full container mx-auto flex flex-col gap-3 px-5 font-sans pt-24 md:pt-20 ">
       <SubTitle title="ONGOING">
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -10,7 +10,7 @@ export default function SubTitle({
   href?: string;
 }) {
   return (
-    <div className="flex items-center justify-between gap-2  mt-5 font-sans">
+    <div className="flex items-center justify-between gap-2 font-sans">
       <h1 className="font-bold text-xl flex gap-1 items-center font-sans">
         {children}
         {title}
