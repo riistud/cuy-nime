@@ -17,7 +17,7 @@ export default function SubTitle({
       </h1>
       <Link
         href={href}
-        className="text-white text-sm bg-amber-500 px-3 py-1 rounded-md hover:bg-amber-600 transition-all ease-in-out duration-200 font-semibold"
+        className="text-white text-sm bg-[var(--accent)] px-3 py-1 rounded-md hover:bg-amber-600 transition-all ease-in-out duration-200 font-semibold"
       >
         Show All
       </Link>
