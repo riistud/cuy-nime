@@ -5,10 +5,11 @@ import { getAnimeSearch } from "@/services";
 export default async function Search({
   params,
 }: {
-  params: { keyword: string };
+  params: Promise<{ keyword: string }>;
 }) {
-  const keyword = await params.keyword;
+  const { keyword } = await params;
   const results = await getAnimeSearch(keyword);
+  console.log(results);
   return (
     <section className="w-full container mx-auto flex flex-col gap-3 px-5">
       <SubTitle title="ONGOING">
