@@ -9,14 +9,14 @@ import Link from "next/link";
 
 export default function AnimeCard({ image, title, status, type, slug }: Props) {
   return (
-    <div className="columns-1 bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-all ease-in-out duration-200">
+    <div className="columns-1 bg-slate-800 rounded-xl overflow-hidden hover:scale-105 transition-all ease-in-out duration-200 font-sans">
       <div
         style={{
           backgroundImage: `url(${image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="h-64 group overflow-hidden relative"
+        className=" h-52 md:h-72 group overflow-hidden relative"
       >
         <Link href={"/anime/" + slug}>
           <span className=" absolute p-1 rounded-lg bg-red-600 text-white top-3 right-3 text-xs">

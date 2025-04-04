@@ -11,11 +11,10 @@ export default function Search() {
   function handleSearch(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     router.push(`/search/${keyword}`);
-    console.log(keyword);
   }
   return (
     <form
-      className="gap-2 flex items-center relative"
+      className="gap-2 flex items-center relative w-full md:w-auto"
       onSubmit={(e) => handleSearch(e)}
     >
       <input

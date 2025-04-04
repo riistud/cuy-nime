@@ -8,8 +8,8 @@ export default function SubTitle({
   children?: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center justify-between gap-2  mt-5">
-      <h1 className="font-bold text-2xl flex gap-1 items-center">
+    <div className="flex items-center justify-between gap-2  mt-5 font-sans">
+      <h1 className="font-extrabold text-2xl flex gap-1 items-center font-sans">
         {children}
         {title}
       </h1>
