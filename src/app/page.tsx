@@ -1,12 +1,13 @@
 import AnimeList from "@/components/AnimeList";
 import SubTitle from "@/components/SubTitle";
+import MainContainer from "@/components/util/MainContainer";
 import { getAnimeCompleted, getAnimeOngoing } from "@/services";
 
 export default async function Home() {
   const animeOngoings = await getAnimeOngoing();
   const animeCompleteds = await getAnimeCompleted();
   return (
-    <section className="w-full container mx-auto flex flex-col gap-3 px-5 font-sans pt-24 md:pt-20 ">
+    <MainContainer>
       <SubTitle title="ONGOING">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +32,6 @@ export default async function Home() {
         </svg>
       </SubTitle>
       <AnimeList data={animeCompleteds} />
-    </section>
+    </MainContainer>
   );
 }

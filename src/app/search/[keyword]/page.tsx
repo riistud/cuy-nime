@@ -1,5 +1,6 @@
 import AnimeList from "@/components/AnimeList";
 import SubTitle from "@/components/SubTitle";
+import MainContainer from "@/components/util/MainContainer";
 import { getAnimeSearch } from "@/services";
 
 export default async function Search({
@@ -10,7 +11,7 @@ export default async function Search({
   const { keyword } = await params;
   const results = await getAnimeSearch(keyword);
   return (
-    <section className="w-full container mx-auto flex flex-col gap-3 px-5 pt-24 md:pt-20 font-sans">
+    <MainContainer>
       <h1 className="font-bold text-xl text-white flex items-center gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +32,6 @@ export default async function Search({
           No results `{keyword}`
         </h1>
       )}
-    </section>
+    </MainContainer>
   );
 }
