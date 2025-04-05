@@ -21,7 +21,13 @@ export async function getAnimeSearch(keyword: string) {
   return res.json();
 }
 
-export async function getOngoingAnime() {
-  const res = await fetch(`${base_url}/ongoing`);
+export async function getOngoingAnime(page?: string) {
+  const currentPage = page;
+  const url = !page
+    ? `${base_url}/ongoing`
+    : `${base_url}/ongoing/page/${
+        currentPage == "on-going-anime" ? "1" : currentPage
+      }`;
+  const res = await fetch(url);
   return res.json();
 }
