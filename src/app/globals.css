@@ -3,10 +3,10 @@
 :root {
   /* --background: #181818; */
   /* --foreground: #ededed; */
-  --primary: #eeeeee;
+  --primary: #1a1a1a;
   --accent: #ffc639;
-  --secondary: #393e46;
-  --dark: #222831;
+  --secondary: #f5f5f5;
+  --dark: #ffffff;
 }
 
 @theme inline {
@@ -16,12 +16,14 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --background: #181818;
-    --foreground: #ededed;
+    --primary: #eeeeee;
+    --accent: #ffc639;
+    --secondary: #393e46;
+    --dark: #222831;
   }
-} */
+}
 
 body {
   background: var(--dark);

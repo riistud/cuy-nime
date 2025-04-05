@@ -12,7 +12,7 @@ import Link from "next/link";
 export default function AnimeCard({ image, title, status, type, slug }: Props) {
   const typeLowerCase = type.toLowerCase();
   return (
-    <div className="columns-1 bg-[var(--secondary)] rounded-lg overflow-hidden hover:scale-105 transition-all ease-in-out duration-200 font-sans group">
+    <div className="columns-1 bg-[var(--secondary)] rounded-lg overflow-hidden hover:scale-105  transition-all ease-in-out duration-200 font-sans group shadow-md hover:shadow-lg">
       {/* header  */}
       <div
         style={{
@@ -32,7 +32,7 @@ export default function AnimeCard({ image, title, status, type, slug }: Props) {
             {type}
           </span>
           {/* play  */}
-          <div className="absolute top-0 left-0 bottom-0 flex items-center justify-center w-full h-full bg-black opacity-0 group-hover:opacity-70 transition-all ease-in-out duration-200">
+          <div className="absolute top-0 left-0 bottom-0 flex items-center justify-center w-full h-full bg-black opacity-0 group-hover:opacity-70 transition-all ease-in-out duration-200 text-white">
             <Play size={80} weight="fill" />
           </div>
         </Link>
