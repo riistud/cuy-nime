@@ -1,11 +1,7 @@
 "use client";
+import { PageNumberType } from "@/_types";
 import Link from "next/link";
 import React from "react";
-
-interface PageNumber {
-  teks: string;
-  page: string;
-}
 
 export default function Pagination({
   url,
@@ -13,8 +9,8 @@ export default function Pagination({
   pageNumbers,
 }: {
   url: string;
-  currentPage: string;
-  pageNumbers: PageNumber[];
+  currentPage?: string;
+  pageNumbers?: PageNumberType[];
 }) {
   return (
     <section className="container mx-auto px-5 flex justify-center items-center mb-5 ">
