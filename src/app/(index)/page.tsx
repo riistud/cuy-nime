@@ -8,7 +8,7 @@ export default async function Home() {
   const animeCompleteds = await getAnimeCompleted();
   return (
     <MainContainer>
-      <SubTitle title="ONGOING">
+      <SubTitle href="/ongoing" title="ONGOING">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -20,7 +20,7 @@ export default async function Home() {
         </svg>
       </SubTitle>
       <AnimeList data={animeOngoings} />
-      <SubTitle title="COMPLETED">
+      <SubTitle href="/completed" title="COMPLETED">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"

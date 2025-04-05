@@ -8,6 +8,7 @@ export default async function Search({
   params: Promise<{ keyword: string }>;
 }) {
   const { keyword } = await params;
+  const decodeKeyword = decodeURI(keyword);
   const results = await getAnimeSearch(keyword);
   return (
     <MainContainer>
@@ -28,7 +29,7 @@ export default async function Search({
         <AnimeList data={results} />
       ) : (
         <h1 className="font-semibold text-gray-400 w-full">
-          No results `{keyword}`
+          No results `{decodeKeyword}`
         </h1>
       )}
     </MainContainer>

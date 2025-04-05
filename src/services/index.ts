@@ -39,6 +39,8 @@ export async function getCompletedAnime(page?: string) {
     : `${base_url}/completed/page/${
         currentPage == "completed-anime" ? "1" : currentPage
       }`;
-  const res = await fetch(url);
+  const res = await fetch(url, {
+    cache: "no-store",
+  });
   return res.json();
 }
