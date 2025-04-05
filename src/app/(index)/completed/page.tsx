@@ -1,26 +1,6 @@
-import AnimeList from "@/components/AnimeList/index";
-import Pagination from "@/components/Pagination";
-import MainContainer from "@/components/util/MainContainer";
-import Title from "@/components/util/Title";
-import { getCompletedAnime } from "@/services";
+import OngoingAndCompletedPage from "@/Layout/OngoingAndCompleted";
 import React from "react";
 
-export default async function Page({
-  searchParams,
-}: {
-  searchParams: Promise<{ page: string }>;
-}) {
-  const { page } = await searchParams;
-  const { data } = await getCompletedAnime(page);
-  return (
-    <MainContainer>
-      <Title>List Anime Completed</Title>
-      <AnimeList animes={data.animes} />
-      <Pagination
-        url="/completed"
-        currentPage={data.pagination?.currentPage}
-        pageNumbers={data.pagination?.pageNumbers}
-      />
-    </MainContainer>
-  );
+export default function Page() {
+  return <OngoingAndCompletedPage url="/completed" title="Completed" />;
 }
