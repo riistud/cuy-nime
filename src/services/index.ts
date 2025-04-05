@@ -17,9 +17,6 @@ export async function getAnimeCompleted() {
 }
 
 export async function getAnimeSearch(keyword: string) {
-  const res = await fetch(`${base_url}/search/?s=${keyword}`, {
-    cache: "force-cache",
-    next: { revalidate: 60 * 60 },
-  });
+  const res = await fetch(`${base_url}/search/?s=${keyword}`);
   return res.json();
 }

@@ -5,7 +5,7 @@ export default function IndexLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <Navbar />
-      {children}
+      <section className="font-sans">{children}</section>
     </>
   );
 }
