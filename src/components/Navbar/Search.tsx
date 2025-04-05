@@ -21,6 +21,7 @@ export default function Search() {
         type="text"
         className="px-3 py-1 rounded-md bg-white outline-none text-slate-800 pe-12 w-full"
         placeholder="Search..."
+        required
         onChange={(e) => setKeyword(e.target.value)}
       />
       <button

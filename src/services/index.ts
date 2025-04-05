@@ -20,3 +20,8 @@ export async function getAnimeSearch(keyword: string) {
   const res = await fetch(`${base_url}/search/?s=${keyword}`);
   return res.json();
 }
+
+export async function getOngoingAnime() {
+  const res = await fetch(`${base_url}/ongoing`);
+  return res.json();
+}
