@@ -31,3 +31,14 @@ export async function getOngoingAnime(page?: string) {
   const res = await fetch(url);
   return res.json();
 }
+
+export async function getCompletedAnime(page?: string) {
+  const currentPage = page;
+  const url = !page
+    ? `${base_url}/completed`
+    : `${base_url}/completed/page/${
+        currentPage == "completed-anime" ? "1" : currentPage
+      }`;
+  const res = await fetch(url);
+  return res.json();
+}
