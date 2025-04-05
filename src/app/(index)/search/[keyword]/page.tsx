@@ -1,5 +1,4 @@
 import AnimeList from "@/components/AnimeList";
-import SubTitle from "@/components/SubTitle";
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeSearch } from "@/services";
 
@@ -12,7 +11,7 @@ export default async function Search({
   const results = await getAnimeSearch(keyword);
   return (
     <MainContainer>
-      <h1 className="font-bold text-xl text-white flex items-center gap-2">
+      <h1 className="font-bold text-xl  flex items-center gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
