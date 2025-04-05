@@ -13,8 +13,8 @@ export default function Pagination({
   pageNumbers?: PageNumberType[];
 }) {
   return (
-    <section className="container mx-auto px-5 flex justify-center items-center mb-5 ">
-      <div className="gap-4 flex flex-wrap justify-center h-full items-center">
+    <section className="container mx-auto flex justify-center items-center mb-5 ">
+      <div className="gap-4 flex flex-wrap justify-center  h-full items-center">
         {pageNumbers?.map((pageNumber, index) => (
           <Link
             key={`${index}-${pageNumber.teks}`}
@@ -30,7 +30,7 @@ export default function Pagination({
             <div
               className={`${
                 pageNumber.teks == currentPage && "bg-[var(--accent)]"
-              } md:text-base text-sm h-8 min-w-8 md:h-10 md:min-w-10 px-2 flex text-center items-center justify-center rounded-md cursor-pointer border border-[var(--accent)]`}
+              } text-sm md:text-base h-10 min-w-10 px-2 flex text-center items-center justify-center rounded-md cursor-pointer border border-[var(--accent)]`}
             >
               {pageNumber.teks}
             </div>
