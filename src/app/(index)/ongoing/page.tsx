@@ -17,6 +17,7 @@ export default async function Page({
       <Title>List Anime Ongoing</Title>
       <AnimeList animes={data.animes} />
       <Pagination
+        url="/ongoing"
         currentPage={data.pagination?.currentPage}
         pageNumbers={data.pagination?.pageNumbers}
       />

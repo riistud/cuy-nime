@@ -8,9 +8,11 @@ interface PageNumber {
 }
 
 export default function Pagination({
+  url,
   currentPage,
   pageNumbers,
 }: {
+  url: string;
   currentPage: string;
   pageNumbers: PageNumber[];
 }) {
@@ -20,7 +22,7 @@ export default function Pagination({
         {pageNumbers?.map((pageNumber, index) => (
           <Link
             key={`${index}-${pageNumber.teks}`}
-            href={`/ongoing?page=${pageNumber.page ?? currentPage}`}
+            href={`${url}?page=${pageNumber.page ?? currentPage}`}
           >
             <div
               className={`${
