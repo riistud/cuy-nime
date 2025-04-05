@@ -13,6 +13,7 @@ export default function AnimeCard({ image, title, status, type, slug }: Props) {
   const typeLowerCase = type.toLowerCase();
   return (
     <div className="columns-1 bg-[var(--secondary)] rounded-lg overflow-hidden hover:scale-105 transition-all ease-in-out duration-200 font-sans group">
+      {/* header  */}
       <div
         style={{
           backgroundImage: `url(${image})`,
@@ -30,11 +31,13 @@ export default function AnimeCard({ image, title, status, type, slug }: Props) {
           >
             {type}
           </span>
+          {/* play  */}
           <div className="absolute top-0 left-0 bottom-0 flex items-center justify-center w-full h-full bg-black opacity-0 group-hover:opacity-70 transition-all ease-in-out duration-200">
             <Play size={80} weight="fill" />
           </div>
         </Link>
       </div>
+      {/* body  */}
       <div className="p-2">
         <h2 className="line-clamp-1 font-semibold group-hover:text-[var(--accent)]">
           {title}
