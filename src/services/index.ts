@@ -1,7 +1,8 @@
-const base_url = process.env.NEXT_PUBLIC_BASE_URL; // base url
+const base_url = process.env.NEXT_PUBLIC_BASE_URL_APP; // base url
+const baseUrlExt = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function getAnimeOngoing() {
-  const res = await fetch(`${base_url}/ongoing`, {
+  const res = await fetch(`${base_url}/api/ongoing`, {
     cache: "force-cache",
     next: { revalidate: 60 * 60 },
   });
@@ -9,38 +10,17 @@ export async function getAnimeOngoing() {
 }
 
 export async function getAnimeCompleted() {
-  const res = await fetch(`${base_url}/completed`, {
+  const res = await fetch(`${base_url}/api/completed`, {
     cache: "force-cache",
     next: { revalidate: 60 * 60 },
   });
   return res.json();
 }
 
-export async function getAnimeSearch(keyword: string) {
-  const res = await fetch(`${base_url}/search/?s=${keyword}`);
-  return res.json();
-}
-
-export async function getOngoingAnime(page?: string) {
-  const currentPage = page;
-  const url = !page
-    ? `${base_url}/ongoing`
-    : `${base_url}/ongoing/page/${
-        currentPage == "on-going-anime" ? "1" : currentPage
-      }`;
-  const res = await fetch(url);
-  return res.json();
-}
-
-export async function getCompletedAnime(page?: string) {
-  const currentPage = page;
-  const url = !page
-    ? `${base_url}/completed`
-    : `${base_url}/completed/page/${
-        currentPage == "completed-anime" ? "1" : currentPage
-      }`;
-  const res = await fetch(url, {
-    cache: "no-store",
-  });
+export async function getAnimeSearch(keyword: string, page?: string) {
+  const fetchUrl = !page
+    ? `${baseUrlExt}/search/?s=${keyword}`
+    : `${baseUrlExt}/search/?s=${keyword}&page=${page}`;
+  const res = await fetch(fetchUrl);
   return res.json();
 }

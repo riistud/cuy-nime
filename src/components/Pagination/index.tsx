@@ -18,7 +18,7 @@ export default function Pagination({
         {pageNumbers?.map((pageNumber, index) => (
           <Link
             key={`${index}-${pageNumber.teks}`}
-            href={`${url}?page=${pageNumber.page ?? currentPage}`}
+            href={`${url}?page=${pageNumber.page ?? ""}`}
             scroll={true}
             onClick={() =>
               scrollTo({

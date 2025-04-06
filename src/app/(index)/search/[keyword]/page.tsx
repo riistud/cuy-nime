@@ -1,15 +1,19 @@
 import AnimeList from "@/components/AnimeList";
+import Pagination from "@/components/Pagination";
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeSearch } from "@/services";
 
 export default async function Search({
   params,
+  searchParams,
 }: {
   params: Promise<{ keyword: string }>;
+  searchParams: Promise<{ page: string }>;
 }) {
   const { keyword } = await params;
   const decodeKeyword = decodeURI(keyword);
-  const results = await getAnimeSearch(keyword);
+  const { page } = await searchParams;
+  const results = await getAnimeSearch(keyword, page);
   return (
     <MainContainer>
       <h1 className="font-bold text-xl  flex items-center gap-2">
@@ -25,8 +29,16 @@ export default async function Search({
         Results
       </h1>
 
+      {/* list anime  */}
       {results.data.animes.length > 0 ? (
-        <AnimeList data={results} />
+        <>
+          <AnimeList animes={results.data.animes} />
+          <Pagination
+            url={`/search/${keyword}`}
+            currentPage={results.data.pagination.currentPage}
+            pageNumbers={results.data.pagination.pageNumbers}
+          />
+        </>
       ) : (
         <h1 className="font-semibold text-gray-400 w-full">
           No results `{decodeKeyword}`
