@@ -9,13 +9,6 @@
   --dark: #ffffff;
 }
 
-@theme inline {
-  --color-background: var(--dark);
-  --color-foreground: var(--primary);
-  --font-sans: var(--font-gabarito-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #eeeeee;
@@ -25,10 +18,20 @@
   }
 }
 
+@theme inline {
+  --color-background: var(--dark);
+  --color-foreground: var(--primary);
+  --color-accent: var(--accent);
+  --color-secondary: var(--secondary);
+  --color-dark: var(--dark);
+  --font-sans: var(--font-gabarito-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
 body {
   background: var(--dark);
   color: var(--primary);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
 
 /* HTML: <div class="loader"></div> */
