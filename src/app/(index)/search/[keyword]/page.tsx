@@ -30,13 +30,13 @@ export default async function Search({
       </h1>
 
       {/* list anime  */}
-      {results.data.animes.length > 0 ? (
+      {results.animes?.length > 0 ? (
         <>
-          <AnimeList animes={results.data.animes} />
+          <AnimeList animes={results.animes} />
           <Pagination
             url={`/search/${keyword}`}
-            currentPage={results.data.pagination.currentPage}
-            pageNumbers={results.data.pagination.pageNumbers}
+            currentPage={results.pagination.currentPage}
+            pageNumbers={results.pagination.pageNumbers}
           />
         </>
       ) : (

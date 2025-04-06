@@ -19,8 +19,8 @@ export async function getAnimeCompleted() {
 
 export async function getAnimeSearch(keyword: string, page?: string) {
   const fetchUrl = !page
-    ? `${baseUrlExt}/search/?s=${keyword}`
-    : `${baseUrlExt}/search/?s=${keyword}&page=${page}`;
+    ? `${base_url}/api/search?q=${keyword}`
+    : `${base_url}/api/search?q=${keyword}&page=${page}`;
   const res = await fetch(fetchUrl);
   return res.json();
 }
