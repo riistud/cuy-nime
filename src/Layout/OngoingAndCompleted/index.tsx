@@ -53,7 +53,7 @@ export default function OngoingAndCompletedPage({
 
   return (
     <MainContainer>
-      <Title>List Anime {title}</Title>
+      <Title>{title} ANIME LIST</Title>
       <AnimeList animes={animes} />
       <Pagination
         url={url}
