@@ -1,5 +1,4 @@
 const base_url = process.env.NEXT_PUBLIC_BASE_URL_APP; // base url
-const baseUrlExt = process.env.NEXT_PUBLIC_BASE_URL;
 
 export async function getAnimeOngoing() {
   const res = await fetch(`${base_url}/api/ongoing`, {
