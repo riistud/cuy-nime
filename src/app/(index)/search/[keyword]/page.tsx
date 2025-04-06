@@ -28,8 +28,6 @@ export default async function Search({
         </svg>{" "}
         Results
       </h1>
-
-      {/* list anime  */}
       {results.animes?.length > 0 ? (
         <>
           <AnimeList animes={results.animes} />
