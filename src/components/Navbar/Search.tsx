@@ -14,7 +14,7 @@ export default function Search() {
   }
   return (
     <form
-      className="gap-2 flex items-center relative w-full md:w-auto text-[var(--secondary)]"
+      className="gap-2 flex items-center relative w-full md:w-auto text-slate-600"
       onSubmit={(e) => handleSearch(e)}
     >
       <input

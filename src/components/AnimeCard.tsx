@@ -20,7 +20,7 @@ export default function AnimeCard({ image, title, status, type, slug }: Props) {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className=" h-52 md:h-72  overflow-hidden relative"
+        className=" h-52 xl:h-72  overflow-hidden relative"
       >
         <Link href={"/anime/" + slug}>
           {/* type  */}
