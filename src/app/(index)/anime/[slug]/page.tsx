@@ -15,8 +15,8 @@ export default async function Page({
     <MainContainer>
       {/* detail anime  */}
       <section className="flex flex-wrap w-full ">
-        <div className=" w-6/12  md:w-4/12 xl:w-3/12 rounded-lg mx-auto md:mx-0 mb-5 md:mb-0 drop-shadow-md overflow-hidden">
-          <img src={data.image} alt="" className=" w-full h-auto " />
+        <div className=" w-6/12  md:w-4/12 xl:w-3/12 rounded-lg mx-auto md:mx-0 mb-5 md:mb-0 drop-shadow-lg overflow-hidden border-4 border-secondary">
+          <img src={data.image} alt="" className=" w-full h-auto" />
         </div>
         <div className="w-full md:w-8/12 xl:h-9/12 md:ps-5 flex flex-col">
           <h1 className="line-clamp-1 w-full text-center md:text-start text-xl md:text-2xl font-bold">
@@ -30,12 +30,14 @@ export default async function Page({
               {data.type}
             </span>
           </div>
-          <p>{data.studio}</p>
-          <p>{data.posted_by}</p>
-          <p>{data.durasi}</p>
-          <p>{data.season}</p>
-          <p>{data.created_date}</p>
-          <p>{data.studio}</p>
+          <ul className="list-disc list-inside ">
+            <li>{data.studio}</li>
+            <li>{data.posted_by}</li>
+            <li>{data.durasi}</li>
+            <li>{data.season}</li>
+            <li>{data.created_date}</li>
+            <li>{data.studio}</li>
+          </ul>
           <div className=" flex gap-2 w-full flex-wrap my-3">
             {data.category.map((item: Category, index: number) => (
               <span
@@ -50,7 +52,7 @@ export default async function Page({
         </div>
       </section>
       {/* list episode  */}
-      <section className="w-full flex flex-col border-2 border-accent rounded-md mb-5 overflow-hidden">
+      <section className="w-full flex flex-col border-2 border-accent rounded-md my-5 overflow-hidden shadow-lg">
         <span className="font-bold text-base my-3 px-5">EPISODE LIST</span>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full h-50 md:h-100 xl:h-50 overflow-y-auto pb-4 px-5">
           {data.episodes.map((episode: Episode, index: number) => (
@@ -58,7 +60,7 @@ export default async function Page({
               key={`${index}+${episode.episode_no}`}
               href={"/play/" + episode.episode_slug}
             >
-              <div className="bg-accent p-2 columns-1 h-fit rounded-md flex items-center gap-2 text-dark">
+              <div className="bg-accent p-2 columns-1 h-fit rounded-md flex items-center gap-2 text-dark hover:scale-102 hover:drop-shadow-md transition-all ease-in-out">
                 <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
