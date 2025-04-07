@@ -33,3 +33,10 @@ export async function getAnimeDetails(slug: string) {
   });
   return result.json();
 }
+
+export async function getAnimePlay(slug: string) {
+  const result = await fetch(`${baseUrlExt}/play/${slug}`, {
+    cache: "force-cache",
+  });
+  return result.json();
+}
