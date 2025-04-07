@@ -13,6 +13,7 @@ export default async function Page({
   const { data }: { data: AnimeDetailTypes } = await getAnimeDetails(slug);
   return (
     <MainContainer>
+      {/* detail anime  */}
       <section className="flex flex-wrap w-full ">
         <div className=" w-6/12  md:w-4/12 xl:w-3/12 rounded-lg mx-auto md:mx-0 mb-5 md:mb-0 drop-shadow-md overflow-hidden">
           <img src={data.image} alt="" className=" w-full h-auto " />
@@ -48,6 +49,7 @@ export default async function Page({
           <p className="text-sm text-slate-500 text-start">{data.subTitle}</p>
         </div>
       </section>
+      {/* list episode  */}
       <section className="w-full flex flex-col border-2 border-accent rounded-md mb-5 overflow-hidden">
         <span className="font-bold text-base my-3 px-5">EPISODE LIST</span>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full h-50 md:h-100 xl:h-50 overflow-y-auto pb-4 px-5">
