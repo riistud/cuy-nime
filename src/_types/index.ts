@@ -34,3 +34,15 @@ export interface Episode {
   episode_no: string;
   episode_date: string;
 }
+
+// player anime
+export interface VideoType {
+  episode_title: string;
+  episode_year: string;
+  src_player_default: string;
+  servers: VideoServer[];
+}
+export interface VideoServer {
+  server_title: string;
+  server_src: string;
+}
