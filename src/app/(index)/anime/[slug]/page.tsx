@@ -58,7 +58,7 @@ export default async function Page({
           {data.episodes.map((episode: Episode, index: number) => (
             <Link
               key={`${index}+${episode.episode_no}`}
-              href={"/play/" + episode.episode_slug}
+              href={slug + "/" + episode.episode_slug}
             >
               <div className="bg-accent p-2 columns-1 h-fit rounded-md flex items-center gap-2 text-dark hover:scale-102 hover:drop-shadow-md transition-all ease-in-out">
                 <div>
