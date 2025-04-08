@@ -53,8 +53,8 @@ export default async function Page({
       </section>
       {/* list episode  */}
       <section className="w-full flex flex-col border-2 border-accent rounded-md my-5 overflow-hidden shadow-lg">
-        <span className="font-bold text-base my-3 px-5">EPISODE LIST</span>
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full h-50 md:h-100 xl:h-50 overflow-y-auto pb-4 px-5">
+        <span className="font-bold text-base my-3 px-3">EPISODE LIST</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 w-full h-50 md:h-100 xl:h-50 overflow-y-auto pb-3 px-3">
           {data.episodes.map((episode: Episode, index: number) => (
             <Link
               key={`${index}+${episode.episode_no}`}

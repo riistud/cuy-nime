@@ -3,20 +3,20 @@
 :root {
   /* --background: #181818; */
   /* --foreground: #ededed; */
-  --primary: #1a1a1a;
+  --primary: #eeeeee;
   --accent: #ffc639;
-  --secondary: #f5f5f5;
-  --dark: #ffffff;
+  --secondary: #393e46;
+  --dark: #222831;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --primary: #eeeeee;
     --accent: #ffc639;
     --secondary: #393e46;
     --dark: #222831;
   }
-}
+} */
 
 @theme inline {
   --color-background: var(--dark);
