@@ -8,7 +8,7 @@ export default function PlayerLayout({ children }: { children: ReactNode }) {
           <b>Back</b>
         </nav>
       </section>
-      {children}
+      <div className="font-sans">{children}</div>
     </>
   );
 }
