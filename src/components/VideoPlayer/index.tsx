@@ -28,6 +28,7 @@ export default function VideoPlayer({
         <iframe
           src={serverSrc}
           className="w-full aspect-video shadow-lg rounded-lg my-5"
+          allowFullScreen
         ></iframe>
       )}
       <div className="w-full p-3 border-2 border-accent rounded-lg shadow-lg mb-5">
