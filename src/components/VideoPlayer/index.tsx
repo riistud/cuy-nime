@@ -1,7 +1,7 @@
 "use client";
 
 import { VideoServer } from "@/_types";
-import { HardDrive, HardDrives } from "@phosphor-icons/react";
+import { HardDrives } from "@phosphor-icons/react";
 import React, { useState } from "react";
 
 export default function VideoPlayer({
