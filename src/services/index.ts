@@ -1,8 +1,8 @@
 const base_url = process.env.NEXT_PUBLIC_BASE_URL_APP; // base url
-const baseUrlExt = process.env.NEXT_PUBLIC_BASE_URL;
+const baseUrlExt = process.env.NEXT_PUBLIC_BASE_URL_EXT;
 
 export async function getAnimeOngoing() {
-  const res = await fetch(`${base_url}/api/ongoing`, {
+  const res = await fetch(`${baseUrlExt}/ongoing`, {
     cache: "force-cache",
     next: { revalidate: 60 * 60 },
   });
@@ -10,7 +10,7 @@ export async function getAnimeOngoing() {
 }
 
 export async function getAnimeCompleted() {
-  const res = await fetch(`${base_url}/api/completed`, {
+  const res = await fetch(`${baseUrlExt}/completed`, {
     cache: "force-cache",
     next: { revalidate: 60 * 60 },
   });

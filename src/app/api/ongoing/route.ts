@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL_EXT;
 
 export async function GET(request: NextRequest) {
   const sParams = request.nextUrl.searchParams;
