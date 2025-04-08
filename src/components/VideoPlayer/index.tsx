@@ -1,6 +1,7 @@
 "use client";
 
 import { VideoServer } from "@/_types";
+import { HardDrive, HardDrives } from "@phosphor-icons/react";
 import React, { useState } from "react";
 
 export default function VideoPlayer({
@@ -29,14 +30,17 @@ export default function VideoPlayer({
           className="w-full aspect-video shadow-lg rounded-lg my-5"
         ></iframe>
       )}
-      <div className="w-full p-3 border-2 border-accent rounded-lg shadow-lg">
-        <h1 className="font-bold text-lg md:text-xl mb-2">Server List</h1>
+      <div className="w-full p-3 border-2 border-accent rounded-lg shadow-lg mb-5">
+        <h1 className="font-bold text-lg md:text-xl mb-2 flex items-center gap-1">
+          <HardDrives size={24} weight="fill" />
+          Server List
+        </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3">
           {listServer.map((server: VideoServer, index: number) => (
             <button
               key={`${index}+${server.server_title}`}
               onClick={() => handleChangeServer(server.server_src)}
-              className="bg-accent font-semibold rounded-md py-1 text-dark active:bg-slate-500"
+              className="bg-accent font-semibold rounded-md py-1 text-dark active:bg-slate-500 text-sm cursor-pointer flex items-center gap-1 justify-center"
             >
               {server.server_title}
             </button>

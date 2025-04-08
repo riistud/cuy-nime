@@ -21,7 +21,7 @@ export default async function Page({
   });
   return (
     <section className=" min-h-screen container mx-auto pt-16 px-5">
-      <div className=" w-full md:w-10/12 xl:w-8/12 flex flex-col">
+      <div className=" w-full md:w-7/12 flex flex-col">
         <div className="w-full py-3 px-5 bg-secondary shadow-lg rounded-lg">
           <h1 className="font-extrabold text-lg md:text-xl text-accent">
             {data.episode_title}
