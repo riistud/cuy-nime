@@ -4,6 +4,18 @@ import VideoPlayer from "@/components/VideoPlayer";
 import { getAnimeDetails, getAnimePlay } from "@/services";
 import React from "react";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ episode: string }>;
+}) {
+  const { episode } = await params;
+  const { data }: { data: VideoType } = await getAnimePlay(episode);
+  return {
+    title: "KuyNime - " + data.episode_title,
+  };
+}
+
 export default async function Page({
   params,
 }: {

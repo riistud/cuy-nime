@@ -4,6 +4,19 @@ import React from "react";
 import { AnimeDetailTypes, Category, Episode } from "@/_types";
 import Link from "next/link";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const { data }: { data: AnimeDetailTypes } = await getAnimeDetails(slug);
+  return {
+    title: "KuyNime - " + data.title,
+    description: data.subTitle,
+  };
+}
+
 export default async function Page({
   params,
 }: {

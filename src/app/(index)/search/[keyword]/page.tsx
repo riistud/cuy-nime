@@ -3,6 +3,18 @@ import Pagination from "@/components/Pagination";
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeSearch } from "@/services";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ keyword: string }>;
+}) {
+  const { keyword } = await params;
+  const decodeKeyword = decodeURI(keyword);
+  return {
+    title: "KuyNime - " + decodeKeyword,
+  };
+}
+
 export default async function Search({
   params,
   searchParams,

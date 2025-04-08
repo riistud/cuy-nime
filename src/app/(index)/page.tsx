@@ -2,6 +2,13 @@ import AnimeList from "@/components/AnimeList/index";
 import SubTitle from "@/components/SubTitle";
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeCompleted, getAnimeOngoing } from "@/services";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "KuyNime - Home",
+  description:
+    "KUYNIME adalah Situs yang menyediakan Streaming Anime dengan Subtitle Indonesia.",
+};
 
 export default async function Home() {
   const ongoingAnimes = await getAnimeOngoing();
