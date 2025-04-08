@@ -1,4 +1,3 @@
-// import { Metadata } from "next";
 import { AnimeDetailTypes, Category, VideoServer, VideoType } from "@/_types";
 import MainContainer from "@/components/util/MainContainer";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -16,13 +15,15 @@ export default async function Page({
   const { data }: { data: VideoType } = await getAnimePlay(episode);
   const animeDetail: { data: AnimeDetailTypes } = await getAnimeDetails(slug);
 
-  const decodeServer = data.servers.map((item: VideoServer, index: number) => {
+  const decodeServer = data.servers.map((item: VideoServer) => {
     const server_title = item.server_title;
     const decoded = atob(item.server_src);
     const match = decoded.match(/src=["']([^"']+)["']/i); // cari src
     const server_src = match ? match[1] : ""; // ambil linknya
     return { server_title, server_src };
   });
+
+  console.log(animeDetail.data.image);
   return (
     <MainContainer>
       <div className="flex flex-wrap w-full mb-5">
@@ -48,7 +49,7 @@ export default async function Page({
               <img
                 src={animeDetail.data.image}
                 alt=""
-                className=" w-full h-auto"
+                className="w-full h-auto"
               />
             </div>
             <div className="w-full flex flex-col">

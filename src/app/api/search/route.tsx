@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
     const result = await fetch(fetchUrl);
     const { data } = await result.json();
     return NextResponse.json(data);
-  } catch (err) {
+  } catch {
     return NextResponse.json(
       { message: "Error fetching data", error: "ERROR ASU" },
       { status: 500 }

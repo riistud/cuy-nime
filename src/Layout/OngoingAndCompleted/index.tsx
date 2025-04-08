@@ -41,7 +41,7 @@ export default function OngoingAndCompletedPage({
       .then(() => {
         setLoading(false);
       });
-  }, [page]);
+  }, [page, baseUrl]);
 
   if (loading) {
     return <Loading />;
