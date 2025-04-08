@@ -2,7 +2,6 @@ import AnimeList from "@/components/AnimeList/index";
 import SubTitle from "@/components/SubTitle";
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeCompleted, getAnimeOngoing } from "@/services";
-import { animate } from "framer-motion";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
