@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import githubAuth from "next-auth/providers/github";
+// import googleAuth from "next-auth/providers/google";
 
 // options
 export const authOptions = {

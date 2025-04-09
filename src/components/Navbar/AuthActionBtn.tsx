@@ -7,9 +7,19 @@ export default async function AuthActionBtn() {
   return (
     <>
       {user ? (
-        <Link href={"/api/auth/signout"}>Sign Out</Link>
+        <Link
+          className="bg-secondary text-accent font-bold text-sm md:text-base px-5 py-1 rounded-md"
+          href={"/profile"}
+        >
+          Profile
+        </Link>
       ) : (
-        <Link href={"/api/auth/signin"}>Sign In</Link>
+        <Link
+          href={"/api/auth/signin"}
+          className=" border border-dark text-dark font-bold text-sm md:text-base px-5 py-1 rounded-md"
+        >
+          SignIn
+        </Link>
       )}
     </>
   );
