@@ -3,8 +3,6 @@ import SubTitle from "@/components/SubTitle";
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeCompleted, getAnimeOngoing } from "@/services";
 import { Metadata } from "next";
-import { getServerSession } from "next-auth";
-import { authOptions } from "../api/auth/[...nextauth]/route";
 
 export const metadata: Metadata = {
   title: "KuyNime - Home",
@@ -15,8 +13,7 @@ export const metadata: Metadata = {
 export default async function Home() {
   const ongoingAnimes = await getAnimeOngoing();
   const completedAnimes = await getAnimeCompleted();
-  const userLogin = await getServerSession(authOptions);
-  console.log(userLogin);
+
   return (
     <MainContainer>
       <SubTitle href="/ongoing" title="ONGOING">
