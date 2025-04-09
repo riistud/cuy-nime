@@ -20,13 +20,13 @@ export default async function Page() {
           PROFILE
         </h1>
         <img
-          src={user?.image ?? "defaultAvatar.png"}
+          src={user?.image ?? "/images/noProfile.png"}
           alt="..."
           className="w-4/12 aspect-square mx-auto rounded-full mb-5"
         />
         <div className=" text-sm md:text-base mb-5">
-          <h3 className="text-center">{user?.name}</h3>
-          <h3 className="text-center">{user?.email}</h3>
+          <h3 className="text-center">{user?.name ?? "anonim"}</h3>
+          <h3 className="text-center">{user?.email ?? "anonim@example.com"}</h3>
         </div>
         <div className="w-full flex justify-center">
           <Link
