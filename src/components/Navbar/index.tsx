@@ -11,15 +11,20 @@ export default function Navbar() {
             <b className="font-extrabold text-xl ">KUYNIME</b>
           </Link>
           <Search />
+          <Link href={"/api/auth/signin"}>Sign In</Link>
+          {/* <button onClick={() => signIn("github")}>Sign In with GitHub</button> // sign in langsung  */}
         </nav>
       </section>
 
       {/* // for hp  */}
       <section className=" w-full pt-1 pb-3 bg-[var(--accent)] text-[var(--dark)] fixed z-50 md:hidden block font-sans">
         <nav className="h-full container mx-auto px-5 flex flex-col items-start justify-center">
-          <Link href={"/"}>
-            <b className="font-extrabold text-xl">KUYNIME</b>
-          </Link>
+          <div className="flex justify-between items-center w-full">
+            <Link href={"/"}>
+              <b className="font-extrabold text-xl">KUYNIME</b>
+            </Link>
+            <Link href={"/api/auth/signin"}>Sign In</Link>
+          </div>
           <Search />
         </nav>
       </section>
