@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Search from "./Search";
+import AuthActionBtn from "./AuthActionBtn";
 
 export default function Navbar() {
   return (
@@ -11,7 +12,7 @@ export default function Navbar() {
             <b className="font-extrabold text-xl ">KUYNIME</b>
           </Link>
           <Search />
-          <Link href={"/api/auth/signin"}>Sign In</Link>
+          <AuthActionBtn />
           {/* <button onClick={() => signIn("github")}>Sign In with GitHub</button> // sign in langsung  */}
         </nav>
       </section>
@@ -23,7 +24,7 @@ export default function Navbar() {
             <Link href={"/"}>
               <b className="font-extrabold text-xl">KUYNIME</b>
             </Link>
-            <Link href={"/api/auth/signin"}>Sign In</Link>
+            <AuthActionBtn />
           </div>
           <Search />
         </nav>
