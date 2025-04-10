@@ -1,6 +1,7 @@
 import MainContainer from "@/components/util/MainContainer";
 import authUserSession from "@/services/auth_session";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import React from "react";
 
 export async function generateMetadata() {
