@@ -1,4 +1,3 @@
-import SubTitle from "@/components/SubTitle";
 import MainContainer from "@/components/util/MainContainer";
 import Link from "next/link";
 import React from "react";
