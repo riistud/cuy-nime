@@ -1,15 +1,15 @@
 import MainContainer from "@/components/util/MainContainer";
 import { getAnimeDetails } from "@/services";
-import React from "react";
 import { AnimeDetailTypes, Category, Episode } from "@/_types";
 import Link from "next/link";
+import { Metadata } from "next";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+type Props = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = params;
   const { data }: { data: AnimeDetailTypes } = await getAnimeDetails(slug);
   return {
     title: "KuyNime - " + data.title,
@@ -17,13 +17,10 @@ export async function generateMetadata({
   };
 }
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export default async function Page({ params }: Props) {
+  const { slug } = params;
   const { data }: { data: AnimeDetailTypes } = await getAnimeDetails(slug);
+
   return (
     <MainContainer>
       {/* detail anime  */}
@@ -57,7 +54,7 @@ export default async function Page({
                 key={`${index}+${item.category_link}`}
                 className="border border-accent bg-accent text-dark px-5 py-1 rounded-md text-xs"
               >
-                {item.categpry_name}
+                {item.category_name}
               </span>
             ))}
           </div>
