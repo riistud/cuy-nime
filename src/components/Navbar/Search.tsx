@@ -12,6 +12,7 @@ export default function Search() {
     e.preventDefault();
     router.push(`/search/${keyword}`);
   }
+
   return (
     <form
       className="gap-2 flex items-center relative w-full md:w-auto text-slate-600"
@@ -26,6 +27,7 @@ export default function Search() {
       />
       <button
         type="submit"
+        aria-label="Cari"
         className="p-1 rounded-full bg-white font-semibold cursor-pointer absolute right-2 top-0 bottom-0 flex items-center h-full"
       >
         <MagnifyingGlass size={24} />
